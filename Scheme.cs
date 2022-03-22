@@ -56,8 +56,7 @@ public abstract record SExpr
             pos++;
             var start = pos;
             SkipWhile(c => c != '"');
-            pos++;
-            return new SAtom<string>(s[start..pos]);
+            return new SAtom<string>(s[start..pos++]);
         }
 
         SExpr Read()
@@ -91,6 +90,8 @@ public record SAtom<T>(T Value) : SExpr
 {
     public override string ToString()
     {
+		if (typeof(T) == typeof(string))
+			return $"\"{Value}\"";
         return Value.ToString()!;
     }
 }

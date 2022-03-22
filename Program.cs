@@ -11,7 +11,6 @@ var exprs = new[]
     @"((lambda (x y) x) #t 6)",
     @"(let ([five 5]) (let ([g (lambda (f) f)]) (g five)))",
     @"(let ([f (lambda (x) x)]) (pair (f 4) (f #t)))",
-    @"(lambda (f) (f f))",
     @"(let ([g (lambda (f) 5)]) (g g))",
     @"(lambda (x) (pair x x))",
     @"((lambda (g) (pair 9 g)) 5)",
